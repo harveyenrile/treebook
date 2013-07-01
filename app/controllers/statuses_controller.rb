@@ -1,7 +1,7 @@
 class StatusesController < ApplicationController
   # GET /statuses
   # GET /statuses.json
-  # before_filter :authenticate_user!
+  before_filter :authenticate_user!
   def index
     @statuses = Status.all
 
@@ -41,6 +41,7 @@ class StatusesController < ApplicationController
   # POST /statuses
   # POST /statuses.json
   def create
+    
     @status = Status.new(params[:status])
 
     respond_to do |format|
