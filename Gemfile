@@ -5,15 +5,15 @@ gem 'rails', '3.2.13'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+gem 'mysql2'
 gem 'devise'
 gem 'simple_form'
+gem 'fabrication'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
 
@@ -25,6 +25,19 @@ group :assets do
 end
 
 gem 'jquery-rails'
+
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'rspec_junit_formatter'
+  gem 'guard-rspec'
+  gem 'shoulda-matchers'
+  gem 'mocha', :require => false
+  gem 'database_cleaner'
+  gem 'simplecov', :require => false
+  gem 'email_spec'
+
+end
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
