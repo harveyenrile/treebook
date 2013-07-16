@@ -3,4 +3,9 @@ harvey:
   last_name: "Enrile"
   profile_name: "harveyenrile"
   email: "harveyenrile@yahoo.com"
-  
+
+vince:
+  first_name: "Vincent"
+  last_name: "Paca"
+  profile_name: "vincentpaca"
+  email: "vincepaca@yahoo.com"
