@@ -5,7 +5,7 @@ gem 'rails', '3.2.13'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2'
+
 gem 'devise'
 gem 'simple_form'
 gem 'fabrication'
@@ -36,7 +36,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'simplecov', :require => false
   gem 'email_spec'
-
+  gem 'mysql2'
 end
 
 
