@@ -30,6 +30,11 @@ gem 'jquery-rails'
 group :production do
   gem "pg"
 end
+
+group :test do
+  gem 'shoulda'
+end
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'rspec_junit_formatter'
@@ -40,6 +45,7 @@ group :development, :test do
   gem 'simplecov', :require => false
   gem 'email_spec'
   gem 'mysql2'
+
 end
 
 

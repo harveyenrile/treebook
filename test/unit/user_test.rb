@@ -1,6 +1,10 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
+
+  should have_many(:user_friendships)
+  should have_many(:friends)
+
   test "a user should enter a first name" do
     user = User.new
     assert !user.save
@@ -38,13 +42,28 @@ class UserTest < ActiveSupport::TestCase
     assert !user.errors[:profile_name].include?("Must be formatted correctly.")
   end
 
-  test "a user can have a correctly formatted profile name" do
-    user = User.new(first_name: "vince", last_name: "paca", email: "vincentpaca@gmail.com")
-    user.password = user.password_confirmation = "asdfasdf"
+  # test "a user can have a correctly formatted profile name" do
+  #   user = User.new(first_name: "vince", last_name: "paca", email: "vincentpaca@gmail.com")
+  #   user.password = user.password_confirmation = "asdfasdf"
 
-    user.profile_name = "vincentpaca"
-    assert user.valid?
+  #   user.profile_name = "vincentpaca"
+  #   assert user.valid?
+  # end
+
+  test "that no error is raised when trying to access a friend list" do
+    assert_nothing_raised do
+      users(:harvey).friends
+    end
+  end
+  test "that creating friendships on a user works" do
+    users(:harvey).friends << users(:harry)
+    users(:harvey).friends.reload
+    assert users(:harvey).friends.include?(users(:harry))
   end
 
+  test "that creating a friendship based on user id and friend id works" do
+    UserFriendship.create user_id: users(:harvey).id, friend_id: users(:harry).id
+    assert users(:harvey).friends.include?(users(:harry))
+  end
    
 end

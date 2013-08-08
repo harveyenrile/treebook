@@ -9,3 +9,9 @@ vince:
   last_name: "Paca"
   profile_name: "vincentpaca"
   email: "vincepaca@yahoo.com"
+
+harry:
+  first_name: "Harry"
+  last_name: "Arbasa"
+  profile_name: "harryarbasa"
+  email: "harryarbasa@yahoo.com"
